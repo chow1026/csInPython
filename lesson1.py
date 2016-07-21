@@ -183,11 +183,15 @@ print(s[-7] + s[2:4] + s[7:11])
 marker = "AFK"
 replacement = "away from keyboard"
 line = "I will now go to sleep and be AFK until lunch time tomorrow."
+replaced = line.replace(marker, replacement)
+print replaced
 
 # Example 2 # uncomment this to test with different input
-# marker = "EY"
-# replacement = "Eyjafjallajokull"
-# line = "The eruption of the volcano EY in 2010 disrupted air travel in Europe for 6 days."
+marker = "EY"
+replacement = "Eyjafjallajokull"
+line = "The eruption of the volcano EY in 2010 disrupted air travel in Europe for 6 days."
+replaced = line.replace(marker, replacement)
+print replaced
 
 ###
 # YOUR CODE BELOW. DO NOT DELETE THIS LINE
@@ -201,3 +205,69 @@ print replaced
 #>>> I will now go to sleep and be away from keyboard until lunch time tomorrow.
 # Example 2 output should be:
 #>>> The eruption of the volcano Eyjafjallajokull in 2010 disrupted air travel in Europe for 6 days.
+
+
+##################################################################
+#      Arithmatic Differences Between Python 2 and Python 3      #
+##################################################################
+
+# Python 2.7.11
+print 10/4.0
+# >>> 2.5
+print 10/4
+# >>> 2
+print 10.0/5
+# >>> 2.0
+print 10*1.0/4
+# >>> 2.5
+print 10/5
+# >>> 2
+print 10/50
+# >>> 0
+
+# Python 3.5.1
+print(10/4.0)
+# >>> 2.5
+print(10/4)
+# >>> 2.5
+print(10.0/5)
+# >>> 2.0
+print(10*1.0/4)
+# >>> 2.5
+print(10/2)
+# >>> 5.0
+print(10/50)
+# >>> 0.2
+
+
+###############################################
+#       Exercise by Websten from forums       #
+###############################################
+# A palindrome is a word or a phrase that reads
+# the same backwards as forwards. Make a program
+# that checks if a word is a palindrome.
+# If the word is a palindrome, print 0 to the terminal,
+# -1 otherwise.
+# The word contains lowercase letters a-z and
+# will be at least one character long.
+#
+### HINT! ###
+# You can read a string backwards with the following syntax:
+# string[::-1] - where the "-1" means one step back.
+# This exercise can be solved with only unit 1 knowledge
+# (no loops or conditions)
+
+word = "madam"
+# test case 2
+# word = "madman" # uncomment this to test
+
+###
+# YOUR CODE HERE. DO NOT DELETE THIS LINE OR ADD A word DEFINITION BELOW IT.
+###
+
+is_palindrome = 0 if bool(word == word[::-1]) else -1
+
+# TESTING
+print is_palindrome
+# >>> 0  # outcome if word == "madam"
+# >>> -1 # outcome if word == "madman"
