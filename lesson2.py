@@ -158,8 +158,6 @@ def is_friend(name):
     else:
         return "Invalid name."
 
-
-
 print is_friend('Diane')
 #>>> True
 
@@ -196,6 +194,45 @@ print biggest(3, 3, 9)
 #>>> 9
 
 print biggest(9, 3, 9)
+#>>> 9
+
+
+###################################################
+# Define a different biggest procedure, biggest2, that takes three
+# numbers as inputs and returns the largest of
+# those three numbers.
+###################################################
+def biggest2(a, b, c):
+    if (isinstance(a, float) or isinstance(a, int)) \
+    and (isinstance(b, float) or isinstance(b, int)) \
+    and (isinstance(c, float) or isinstance(c, int)):
+        # return max([a, b, c])
+        if a > b:
+            if a > c:
+                return a
+            else:
+                return c
+        else:
+            if b > c:
+                return b
+            else:
+                return c
+    else:
+        return "Invalid inputs."
+
+print(biggest2(3, 6, 9))
+#>>> 9
+
+print(biggest2(6, 9, 3))
+#>>> 9
+
+print(biggest(9, 3, 6))
+#>>> 9
+
+print(biggest(3, 3, 9))
+#>>> 9
+
+print(biggest(9, 3, 9))
 #>>> 9
 
 
@@ -252,6 +289,28 @@ print factorial(5)
 print factorial(6)
 #>>> 720
 
+###################################################
+# Define procedures, testwhile & testbreak, to
+# test different ways of code to achieve the same
+# output.
+###################################################
+def testwhile(countdown):
+    while countdown >= 0:
+        print(countdown)
+        countdown = countdown - 1
+
+testwhile(10)
+
+def testbreak(countdown):
+    while True:
+        if countdown < 0:
+            break
+        print(countdown)
+        countdown = countdown - 1
+
+testbreak(10)
+
+
 
 ###################################################
 # Modify the get_next_target procedure so that
@@ -283,6 +342,42 @@ def get_next_target(page):
         return url, end_quote
 
 get_next_target(page)
+
+###################################################
+# alternative to the above get_next_target
+###################################################
+page = '''<div id="top_bin"> <div id="top_content" class="width960">
+   <div class="udacity float-left"> Hot "butt" </div></div>'''
+
+def get_next_target(page):
+    start_link = page.find('<a href=')
+
+    #Insert your code below here
+    if (start_link < 0):
+        return None, 0
+    # note that no else needed.  
+    start_quote = page.find('"', start_link)
+    end_quote = page.find('"', start_quote + 1)
+    url = page[start_quote + 1:end_quote]
+    return url, end_quote
+
+get_next_target2(page)
+
+
+
+###################################################
+# Write a print_all_links procedure so that
+# it prints out all links from a page
+###################################################
+def print_all_links(page):
+    while true:
+        url, endpost = get_next_target(page)
+        if url:
+            print(url)
+            page = page[endpost:]
+        else:
+            break
+
 
 
 ###################################################
