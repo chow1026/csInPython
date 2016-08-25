@@ -188,7 +188,6 @@ print hashtable_lookup(table, 'Python')
 
 
 
-
 # [Double Gold Star] Memoization is a way to make code run faster by saving
 # previously computed results.  Instead of needing to recompute the value of an
 # expression, a memoized computation first looks for the value in a cache of
@@ -227,6 +226,9 @@ print "Second time:"
 ### second execution (should only print out the result)
 print cached_execution(cache, factorial, 50)
 
+print "Print Cache After Second Time:"
+print cache
+
 # Here is a more interesting example using cached_execution
 # (do not worry if you do not understand this, though,
 # it will be clearer after Unit 6):
@@ -242,3 +244,6 @@ cache = {} # new cache for this procedure
 # do not try this at home...at least without a cache!
 print "New Cache for Cached_fibo"
 print cached_execution(cache, cached_fibo,100)
+
+print "Print Cache After Cached_fibo:"
+print cache
