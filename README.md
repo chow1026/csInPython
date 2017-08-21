@@ -1,8 +1,8 @@
-# Udacity Data Analyst NanoDegree - Introduction to Computer Science
+# Intro to Computer Science with Python
 
 ## Summary
 
-This is the repo for all the scripts from the exercises and quizes for the Introduction to Computer Science course.  The project is an optional, pre-requisite course of the Udacity Data Analyst NanoDegree program.  
+This is the repo for some useful python scripts for learning Python.  
 
 ## Environment Requirements
 
